@@ -1,0 +1,60 @@
+@import "compass/css3/transition";
+
+.device {
+	.panel-heading {
+		.attrs {
+			display: inline-block;
+			float: right;
+			font-size: .75em;
+			margin: -5px 0;
+			text-align: right;
+
+			span {display: block; }
+		}
+	}
+}
+
+.temperature {
+	@include transition(all 0.3s);
+
+	height: 75px;
+	width: 75px;
+	border-radius: 50px;
+	border: 1px solid;
+	display: inline-block;
+
+	span{
+		font-size: 2em;
+		display:block;
+		vertical-align:middle;
+		line-height: 75px;
+		width: 75px;
+		text-align: center;
+	}
+}
+
+.target, .fan {
+	font-size: 1.5em;
+	vertical-align: top;
+	display: inline-block;
+}
+
+.heat { color: red; }
+.cool { color: blue; }
+
+.debug {
+	max-height: 1.5em;
+	overflow: hidden;
+
+	@include transition(max-height 0.4s);
+
+	&:hover {
+		max-height: 9999px;
+	}
+
+	li.title {
+		font-size: 0.9em;
+		text-align: center;
+		padding: 0.25em;
+	}
+}

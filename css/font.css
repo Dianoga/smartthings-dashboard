@@ -1,0 +1,64 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('fonts/icomoon.eot?v7lhzy');
+	src:url('fonts/icomoon.eot?#iefixv7lhzy') format('embedded-opentype'),
+		url('fonts/icomoon.woff?v7lhzy') format('woff'),
+		url('fonts/icomoon.ttf?v7lhzy') format('truetype'),
+		url('fonts/icomoon.svg?v7lhzy#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-socket:before {
+	content: "\e600";
+}
+.icon-snowflake:before {
+	content: "\e603";
+}
+.icon-battery-empty:before {
+	content: "\e604";
+}
+.icon-battery-25:before {
+	content: "\e608";
+}
+.icon-battery-50:before {
+	content: "\e609";
+}
+.icon-battery-75:before {
+	content: "\e60a";
+}
+.icon-battery-full:before {
+	content: "\e60b";
+}
+.icon-switch:before {
+	content: "\e605";
+}
+.icon-open:before {
+	content: "\e606";
+}
+.icon-close:before {
+	content: "\e607";
+}
+.icon-fire:before {
+	content: "\e601";
+}
+.icon-signal:before {
+	content: "\f012";
+}
+.icon-air:before {
+	content: "\e602";
+}
