@@ -18,6 +18,9 @@ angular
 				if (value.battery != undefined) {
 					setBatteryLevel(key, value.battery);
 				}
+
+				removeCapability(key, "Battery");
+				removeCapability(key, "Signal Strength");
 			});
 		});
 
@@ -56,5 +59,14 @@ angular
 				icon = 'icon-battery-75';
 			}
 			$scope.devices[key].batteryIcon = icon;
+		}
+
+		var removeCapability = function(key, cap) {
+			if ($scope.devices[key].capabilities != undefined) {
+				var cI = $scope.devices[key].capabilities.indexOf(cap);
+				if (cI != -1) {
+					$scope.devices[key].capabilities.splice(cI, 1);
+				}
+			}
 		}
 	});
