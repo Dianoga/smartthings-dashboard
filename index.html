@@ -51,6 +51,11 @@
 								<span class='closed' ng-if='d.contact == "closed"'><i class='icon-close'></i></span>
 							</div>
 						</div>
+						<div class='col-md-6' ng-if='d.capabilities.indexOf("Switch") != -1' ng-class="{ 'col-md-offset-3': d.capabilities.length == 1 }">
+							<div class='switch {{d.switch}}'>
+								<span><i class='icon-switch'></i></span>
+							</div>
+						</div>
 					</div>
 					<ul class='list-group debug'>
 						<li class='list-group-item title'>Device Attributes</li>

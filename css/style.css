@@ -64,6 +64,30 @@
   text-align: center;
 }
 
+.switch {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  height: 75px;
+  width: 75px;
+  border-radius: 50px;
+  border: 1px solid;
+  display: inline-block;
+}
+.switch span {
+  font-size: 2em;
+  display: block;
+  vertical-align: middle;
+  line-height: 75px;
+  width: 75px;
+  text-align: center;
+}
+.switch.on {
+  background-color: green;
+  color: white;
+}
+
 .debug {
   max-height: 1.5em;
   overflow: hidden;

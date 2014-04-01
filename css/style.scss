@@ -51,6 +51,15 @@
 	@include circleProp();
 }
 
+.switch {
+	@include circleProp();
+
+	&.on {
+		background-color: green;
+		color: white;
+	}
+}
+
 .debug {
 	max-height: 1.5em;
 	overflow: hidden;
