@@ -33,6 +33,7 @@
   font-size: 1.5em;
   vertical-align: top;
   display: inline-block;
+  white-space: nowrap;
 }
 
 .heat {
