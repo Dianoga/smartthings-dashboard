@@ -1,20 +1,6 @@
 @import "compass/css3/transition";
 
-.device {
-	.panel-heading {
-		.attrs {
-			display: inline-block;
-			float: right;
-			font-size: .75em;
-			margin: -5px 0;
-			text-align: right;
-
-			span {display: block; }
-		}
-	}
-}
-
-.temperature {
+@mixin circleProp {
 	@include transition(all 0.3s);
 
 	height: 75px;
@@ -33,6 +19,24 @@
 	}
 }
 
+.device {
+	.panel-heading {
+		.attrs {
+			display: inline-block;
+			float: right;
+			font-size: .75em;
+			margin: -5px 0;
+			text-align: right;
+
+			span {display: block; }
+		}
+	}
+}
+
+.temperature {
+	@include circleProp();
+}
+
 .target, .fan {
 	font-size: 1.5em;
 	vertical-align: top;
@@ -42,6 +46,10 @@
 
 .heat { color: red; }
 .cool { color: blue; }
+
+.contact {
+	@include circleProp();
+}
 
 .debug {
 	max-height: 1.5em;
