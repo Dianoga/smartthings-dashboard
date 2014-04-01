@@ -20,6 +20,10 @@
 }
 
 .device {
+	&:nth-child(4n+1) {
+		clear: both;
+	}
+
 	.panel-heading {
 		.attrs {
 			display: inline-block;
