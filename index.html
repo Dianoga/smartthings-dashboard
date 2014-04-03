@@ -14,7 +14,7 @@
 		<h1>SmartThings Dashboard</h1>
 
 		<div class='row'>
-			<div class='device col-md-3' ng-repeat="d in devices">
+			<div class='device col-md-3 col-sm-4' ng-repeat="d in devices">
 				<div class='panel panel-default'>
 					<div class='panel-heading'>
 						<div class='attrs'>
@@ -25,12 +25,12 @@
 					</div>
 					<div class='panel-body'>
 						<div class='thermostat' ng-if='d.capabilities.indexOf("Thermostat") != -1'>
-							<div class='col-md-6'>
+							<div class='col-sm-6'>
 								<div class='temperature' style='background-color: {{d.temperatureBgColor}}; color: {{d.temperatureTextColor}};'>
 									<span>{{d.temperature}}°</span>
 								</div>
 							</div>
-							<div class='col-md-6'>
+							<div class='col-sm-6'>
 								<div class='target' ng-if="d.thermostatMode != 'off'">
 									<span class='heat' ng-if="d.thermostatMode == 'heat' || d.thermostatMode == 'emergency heat'"><i class="icon-fire"></i> {{d.heatingSetpoint}}°</span>
 									<span class='cool' ng-if="d.thermostatMode == 'cool'"><i class="icon-snowflake"></i> {{d.coolingSetpoint}}°</span>
@@ -40,23 +40,23 @@
 								</div>
 							</div>
 						</div>
-						<div class='col-md-6' ng-if='d.capabilities.indexOf("Temperature Measurement") != -1' ng-class="{ 'col-md-offset-3': d.capabilities.length == 1 }">
+						<div class='col-sm-6' ng-if='d.capabilities.indexOf("Temperature Measurement") != -1' ng-class="{ 'col-sm-offset-3': d.capabilities.length == 1 }">
 							<div class='temperature'  style='background-color: {{d.temperatureBgColor}}; color: {{d.temperatureTextColor}};'>
 								<span>{{d.temperature}}°</span>
 							</div>
 						</div>
-						<div class='col-md-6' ng-if='d.capabilities.indexOf("Contact Sensor") != -1' ng-class="{ 'col-md-offset-3': d.capabilities.length == 1 }">
+						<div class='col-sm-6' ng-if='d.capabilities.indexOf("Contact Sensor") != -1' ng-class="{ 'col-sm-offset-3': d.capabilities.length == 1 }">
 							<div class='contact'>
 								<span class='open' ng-if='d.contact == "open"'><i class='icon-open'></i></span>
 								<span class='closed' ng-if='d.contact == "closed"'><i class='icon-close'></i></span>
 							</div>
 						</div>
-						<div class='col-md-6' ng-if='d.capabilities.indexOf("Switch") != -1' ng-class="{ 'col-md-offset-3': d.capabilities.length == 1 }">
+						<div class='col-sm-6' ng-if='d.capabilities.indexOf("Switch") != -1' ng-class="{ 'col-sm-offset-3': d.capabilities.length == 1 }">
 							<div class='switch {{d.switch}}'>
 								<span><i class='icon-switch'></i></span>
 							</div>
 						</div>
-						<div class='col-md-6' ng-if='d.capabilities.indexOf("Motion Sensor") != -1' ng-class="{ 'col-md-offset-3': d.capabilities.length == 1 }">
+						<div class='col-sm-6' ng-if='d.capabilities.indexOf("Motion Sensor") != -1' ng-class="{ 'col-sm-offset-3': d.capabilities.length == 1 }">
 							<div class='motion {{d.motion}}'>
 								<span><i class='icon-eye'></i></span>
 							</div>
@@ -68,7 +68,7 @@
 					</ul>
 				</div>
 			</div>
-			<div class='col-md-6 col-md-offset-3 '>
+			<div class='col-md-6 col-sm-offset-3 '>
 				<div class='panel panel-danger' ng-if="false">
 					<div class='panel-heading'><h4>SmartApp Issue</h4></div>
 					<div class='panel-body'>

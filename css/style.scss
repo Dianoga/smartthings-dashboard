@@ -3,26 +3,43 @@
 @mixin circleProp {
 	@include transition(all 0.3s);
 
-	height: 75px;
-	width: 75px;
-	border-radius: 50px;
-	border: 1px solid;
+	position: relative;
 	display: inline-block;
+	width: 100%;
+	height: 0;
+	padding: 50% 0;
+	border-radius: 50%;
+	border: 1px solid;
 
-	span{
-		font-size: 2em;
-		display:block;
-		vertical-align:middle;
-		line-height: 75px;
-		width: 75px;
-		text-align: center;
+	font-size: 2em;
+	text-align: center;
+	line-height: 0;
+
+	i { line-height: 0; }
+}
+
+$break-small: 768px;
+$break-medium: 992px;
+$break-large: 1200px;
+
+@mixin respond-to($media) {
+	@if $media == xs {
+		@media only screen and (max-width: $break-small) { @content; }
+	}
+	@else if $media == sm {
+		@media only screen and (min-width: $break-small + 1) and (max-width: $break-medium - 1) { @content; }
+	}
+	@else if $media == m {
+		@media only screen and (min-width: $break-medium + 1) and (max-width: $break-large - 1) { @content; }
+	}
+	@else if $media == l {
+		@media only screen and (min-width: $break-large) { @content; }
 	}
 }
 
 .device {
-	&:nth-child(4n+1) {
-		clear: both;
-	}
+	@include respond-to(sm) { &:nth-child(3n+1) { clear: both; } }
+	@include respond-to(m) { &:nth-child(4n+1) { clear: both; } }
 
 	.panel-heading {
 		.attrs {

@@ -1,5 +1,12 @@
-.device:nth-child(4n+1) {
-  clear: both;
+@media only screen and (min-width: 769px) and (max-width: 991px) {
+  .device:nth-child(3n+1) {
+    clear: both;
+  }
+}
+@media only screen and (min-width: 993px) and (max-width: 1199px) {
+  .device:nth-child(4n+1) {
+    clear: both;
+  }
 }
 .device .panel-heading .attrs {
   display: inline-block;
@@ -17,19 +24,19 @@
   -moz-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
-  height: 75px;
-  width: 75px;
-  border-radius: 50px;
-  border: 1px solid;
+  position: relative;
   display: inline-block;
-}
-.temperature span {
+  width: 100%;
+  height: 0;
+  padding: 50% 0;
+  border-radius: 50%;
+  border: 1px solid;
   font-size: 2em;
-  display: block;
-  vertical-align: middle;
-  line-height: 75px;
-  width: 75px;
   text-align: center;
+  line-height: 0;
+}
+.temperature i {
+  line-height: 0;
 }
 
 .target, .fan {
@@ -52,19 +59,19 @@
   -moz-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
-  height: 75px;
-  width: 75px;
-  border-radius: 50px;
-  border: 1px solid;
+  position: relative;
   display: inline-block;
-}
-.contact span {
+  width: 100%;
+  height: 0;
+  padding: 50% 0;
+  border-radius: 50%;
+  border: 1px solid;
   font-size: 2em;
-  display: block;
-  vertical-align: middle;
-  line-height: 75px;
-  width: 75px;
   text-align: center;
+  line-height: 0;
+}
+.contact i {
+  line-height: 0;
 }
 
 .switch {
@@ -72,19 +79,19 @@
   -moz-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
-  height: 75px;
-  width: 75px;
-  border-radius: 50px;
-  border: 1px solid;
+  position: relative;
   display: inline-block;
-}
-.switch span {
+  width: 100%;
+  height: 0;
+  padding: 50% 0;
+  border-radius: 50%;
+  border: 1px solid;
   font-size: 2em;
-  display: block;
-  vertical-align: middle;
-  line-height: 75px;
-  width: 75px;
   text-align: center;
+  line-height: 0;
+}
+.switch i {
+  line-height: 0;
 }
 .switch.on {
   background-color: green;
@@ -96,19 +103,19 @@
   -moz-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
-  height: 75px;
-  width: 75px;
-  border-radius: 50px;
-  border: 1px solid;
+  position: relative;
   display: inline-block;
-}
-.motion span {
+  width: 100%;
+  height: 0;
+  padding: 50% 0;
+  border-radius: 50%;
+  border: 1px solid;
   font-size: 2em;
-  display: block;
-  vertical-align: middle;
-  line-height: 75px;
-  width: 75px;
   text-align: center;
+  line-height: 0;
+}
+.motion i {
+  line-height: 0;
 }
 .motion.inactive {
   color: #ccc;
