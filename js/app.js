@@ -47,8 +47,22 @@ angular
 		})
 
 		var setColorTemps = function(key, temp) {
-			var scale = chroma.scale(['#08519c', '#c6dbef', '#ffffb2', '#bd0026']).mode('hsv').domain([0, 100]).out('hex');
-			var bgColor = scale(temp);
+			// var scale = chroma.scale(['navy', 'royalblue', 'skyblue', 'springgreen', 'gold', 'orange', 'orangered', 'firebrick']).mode('hsv').domain([0, 100]).out('hex');
+			var bgColor = '#153591';
+			var tempScale = {
+				44: '#1e9cbb',
+				59: '#90d2a7',
+				74: '#44b621',
+				84: '#f1d801',
+				95: '#d04e00',
+				100: '#bc2323'
+			};
+			angular.forEach(tempScale, function(value, tKey) {
+				if (temp > parseFloat(tKey)) {
+					bgColor = value;
+				}
+			});
+
 			var textColor = chroma(bgColor).luminance() > 0.5 ? chroma(bgColor).darken(50).hex() : chroma(bgColor).brighten(50).hex();
 			$scope.devices[key].temperatureTextColor = textColor;
 			$scope.devices[key].temperatureBgColor = bgColor;
