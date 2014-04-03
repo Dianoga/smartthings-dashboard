@@ -20,6 +20,11 @@ angular
 				}
 
 				removeCapability(key, "Battery");
+				removeCapability(key, "Indicator");
+				removeCapability(key, "Polling");
+				removeCapability(key, "Sensor");
+				removeCapability(key, "Actuator");
+				removeCapability(key, "Refresh");
 				removeCapability(key, "Signal Strength");
 			});
 		});

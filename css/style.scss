@@ -64,6 +64,14 @@
 	}
 }
 
+.motion {
+	@include circleProp();
+
+	&.inactive {
+		color: #ccc;
+	}
+}
+
 .debug {
 	max-height: 1.5em;
 	overflow: hidden;
