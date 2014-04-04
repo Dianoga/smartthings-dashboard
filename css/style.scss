@@ -40,6 +40,7 @@ $break-large: 1200px;
 .device {
 	@include respond-to(sm) { &:nth-child(3n+1) { clear: both; } }
 	@include respond-to(m) { &:nth-child(4n+1) { clear: both; } }
+	@include respond-to(l) { &:nth-child(4n+1) { clear: both; } }
 
 	.panel-heading {
 		.attrs {
