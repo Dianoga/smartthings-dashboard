@@ -25,40 +25,45 @@
 					</div>
 					<div class='panel-body'>
 						<div class='thermostat' ng-if='d.capabilities.indexOf("Thermostat") != -1'>
-							<div class='col-sm-6'>
+							<div class='col-sm-6 property'>
 								<div class='temperature' style='background-color: {{d.temperatureBgColor}}; color: {{d.temperatureTextColor}};'>
-									<span>{{d.temperature}}°</span>
+									{{d.temperature}}°
 								</div>
 							</div>
-							<div class='col-sm-6'>
+							<div class='col-sm-6 property'>
 								<div class='target' ng-if="d.thermostatMode != 'off'">
-									<span class='heat' ng-if="d.thermostatMode == 'heat' || d.thermostatMode == 'emergency heat'"><i class="icon-fire"></i> {{d.heatingSetpoint}}°</span>
-									<span class='cool' ng-if="d.thermostatMode == 'cool'"><i class="icon-snowflake"></i> {{d.coolingSetpoint}}°</span>
+									<span class='heat icon-fire' ng-if="d.thermostatMode == 'heat' || d.thermostatMode == 'emergency heat'"> {{d.heatingSetpoint}}°</span>
+									<span class='cool icon-snow' ng-if="d.thermostatMode == 'cool'"> {{d.coolingSetpoint}}°</span>
 								</div>
-								<div class='fan' ng-if="d.thermostatFanMode != 'off'">
-									<span><i class='icon-air'></i> {{d.thermostatFanMode}}</span>
+								<div class='fan icon-air' ng-if="d.thermostatFanMode != 'off'">
+									{{d.thermostatFanMode}}
 								</div>
 							</div>
 						</div>
-						<div class='col-sm-6' ng-if='d.capabilities.indexOf("Temperature Measurement") != -1' ng-class="{ 'col-sm-offset-3': d.capabilities.length == 1 }">
+						<div class='col-sm-6 property' ng-if='d.capabilities.indexOf("Temperature Measurement") != -1' ng-class="{ 'col-sm-offset-3': d.capabilities.length == 1 }">
 							<div class='temperature'  style='background-color: {{d.temperatureBgColor}}; color: {{d.temperatureTextColor}};'>
 								<span>{{d.temperature}}°</span>
 							</div>
 						</div>
-						<div class='col-sm-6' ng-if='d.capabilities.indexOf("Contact Sensor") != -1' ng-class="{ 'col-sm-offset-3': d.capabilities.length == 1 }">
+						<div class='col-sm-6 property' ng-if='d.capabilities.indexOf("Contact Sensor") != -1' ng-class="{ 'col-sm-offset-3': d.capabilities.length == 1 }">
 							<div class='contact'>
-								<span class='open' ng-if='d.contact == "open"'><i class='icon-open'></i></span>
-								<span class='closed' ng-if='d.contact == "closed"'><i class='icon-close'></i></span>
+								<span class='open icon-open' ng-if='d.contact == "open"'></span>
+								<span class='closed icon-close' ng-if='d.contact == "closed"'></span>
 							</div>
 						</div>
-						<div class='col-sm-6' ng-if='d.capabilities.indexOf("Switch") != -1' ng-class="{ 'col-sm-offset-3': d.capabilities.length == 1 }">
+						<div class='col-sm-6 property' ng-if='d.capabilities.indexOf("Switch") != -1' ng-class="{ 'col-sm-offset-3': d.capabilities.length == 1 }">
 							<div class='switch {{d.switch}}'>
-								<span><i class='icon-switch'></i></span>
+								<span class='icon-switch'></span>
 							</div>
 						</div>
-						<div class='col-sm-6' ng-if='d.capabilities.indexOf("Motion Sensor") != -1' ng-class="{ 'col-sm-offset-3': d.capabilities.length == 1 }">
+						<div class='col-sm-6 property' ng-if='d.capabilities.indexOf("Motion Sensor") != -1' ng-class="{ 'col-sm-offset-3': d.capabilities.length == 1 }">
 							<div class='motion {{d.motion}}'>
-								<span><i class='icon-eye'></i></span>
+								<span class='icon-eye'></span>
+							</div>
+						</div>
+						<div class='col-sm-6 property' ng-if='d.presence' ng-class="{ 'col-sm-offset-3': d.capabilities.length == 1 }">
+							<div class='presence' ng-class="{'away': d.presence != 'present'}">
+								<span ng-class="{'icon-present': d.presence == 'present', 'icon-away': d.presence != 'present'}"></span>
 							</div>
 						</div>
 					</div>
