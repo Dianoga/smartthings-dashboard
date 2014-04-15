@@ -1,9 +1,19 @@
-@media only screen and (min-width: 769px) and (max-width: 991px) {
+@media only screen and (max-width: 767px) {
+  .device:nth-child(2n+1) {
+    clear: both;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
   .device:nth-child(3n+1) {
     clear: both;
   }
 }
-@media only screen and (min-width: 993px) and (max-width: 1199px) {
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .device:nth-child(4n+1) {
+    clear: both;
+  }
+}
+@media only screen and (min-width: 1200px) {
   .device:nth-child(4n+1) {
     clear: both;
   }
@@ -23,6 +33,12 @@
 .device .panel-heading .attrs span {
   display: block;
 }
+.device .property {
+  margin-bottom: 0.5em;
+}
+.device .property:nth-child(2n+1) {
+  clear: both;
+}
 
 .temperature {
   -moz-transition: all 0.3s;
@@ -40,7 +56,8 @@
   text-align: center;
   line-height: 0;
 }
-.temperature i {
+.temperature [class^="icon-"]:before,
+.temperature [class*=" icon-"]:before {
   line-height: 0;
 }
 
@@ -75,7 +92,8 @@
   text-align: center;
   line-height: 0;
 }
-.contact i {
+.contact [class^="icon-"]:before,
+.contact [class*=" icon-"]:before {
   line-height: 0;
 }
 
@@ -95,7 +113,8 @@
   text-align: center;
   line-height: 0;
 }
-.switch i {
+.switch [class^="icon-"]:before,
+.switch [class*=" icon-"]:before {
   line-height: 0;
 }
 .switch.on {
@@ -119,11 +138,60 @@
   text-align: center;
   line-height: 0;
 }
-.motion i {
+.motion [class^="icon-"]:before,
+.motion [class*=" icon-"]:before {
   line-height: 0;
 }
 .motion.inactive {
   color: #ccc;
+}
+
+.presence {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 0;
+  padding: 50% 0;
+  border-radius: 50%;
+  border: 1px solid;
+  font-size: 2em;
+  text-align: center;
+  line-height: 0;
+}
+.presence [class^="icon-"]:before,
+.presence [class*=" icon-"]:before {
+  line-height: 0;
+}
+
+.humidity {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 0;
+  padding: 50% 0;
+  border-radius: 50%;
+  border: 1px solid;
+  font-size: 2em;
+  text-align: center;
+  line-height: 0;
+  color: blue;
+}
+.humidity [class^="icon-"]:before,
+.humidity [class*=" icon-"]:before {
+  line-height: 0;
+  position: relative;
+  top: 2em;
+  display: block;
+  text-align: center;
+  font-size: 0.5em;
 }
 
 .debug {
@@ -134,8 +202,8 @@
   -webkit-transition: max-height 0.4s;
   transition: max-height 0.4s;
 }
-.debug:hover {
-  max-height: 9999px;
+.debug.show {
+  max-height: 999px;
 }
 .debug li.title {
   font-size: 0.9em;

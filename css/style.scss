@@ -1,6 +1,6 @@
 @import "compass/css3/transition";
 
-@mixin circleProp {
+@mixin circleProp($iconLabel: false) {
 	@include transition(all 0.3s);
 
 	position: relative;
@@ -15,7 +15,18 @@
 	text-align: center;
 	line-height: 0;
 
-	i { line-height: 0; }
+	[class^="icon-"]:before,
+	[class*=" icon-"]:before {
+		line-height: 0;
+
+		@if $iconLabel {
+			position: relative;
+			top: 2em;
+			display:block;
+			text-align: center;
+			font-size: 0.5em
+		}
+	}
 }
 
 $break-small: 768px;
@@ -24,13 +35,13 @@ $break-large: 1200px;
 
 @mixin respond-to($media) {
 	@if $media == xs {
-		@media only screen and (max-width: $break-small) { @content; }
+		@media only screen and (max-width: $break-small - 1) { @content; }
 	}
 	@else if $media == sm {
-		@media only screen and (min-width: $break-small + 1) and (max-width: $break-medium - 1) { @content; }
+		@media only screen and (min-width: $break-small) and (max-width: $break-medium - 1) { @content; }
 	}
 	@else if $media == m {
-		@media only screen and (min-width: $break-medium + 1) and (max-width: $break-large - 1) { @content; }
+		@media only screen and (min-width: $break-medium) and (max-width: $break-large - 1) { @content; }
 	}
 	@else if $media == l {
 		@media only screen and (min-width: $break-large) { @content; }
@@ -38,6 +49,7 @@ $break-large: 1200px;
 }
 
 .device {
+	@include respond-to(xs) { &:nth-child(2n+1) { clear: both; } }
 	@include respond-to(sm) { &:nth-child(3n+1) { clear: both; } }
 	@include respond-to(m) { &:nth-child(4n+1) { clear: both; } }
 	@include respond-to(l) { &:nth-child(4n+1) { clear: both; } }
@@ -51,6 +63,14 @@ $break-large: 1200px;
 			text-align: right;
 
 			span {display: block; }
+		}
+	}
+
+	.property {
+		margin-bottom: 0.5em;
+
+		&:nth-child(2n+1) {
+			clear: both;
 		}
 	}
 }
@@ -90,14 +110,24 @@ $break-large: 1200px;
 	}
 }
 
+.presence {
+	@include circleProp();
+}
+
+.humidity {
+	@include circleProp(true);
+
+	color: blue;
+}
+
 .debug {
 	max-height: 1.5em;
 	overflow: hidden;
 
 	@include transition(max-height 0.4s);
 
-	&:hover {
-		max-height: 9999px;
+	&.show {
+		max-height: 999px;
 	}
 
 	li.title {
