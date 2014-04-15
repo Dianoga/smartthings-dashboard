@@ -35,13 +35,13 @@ $break-large: 1200px;
 
 @mixin respond-to($media) {
 	@if $media == xs {
-		@media only screen and (max-width: $break-small) { @content; }
+		@media only screen and (max-width: $break-small - 1) { @content; }
 	}
 	@else if $media == sm {
-		@media only screen and (min-width: $break-small + 1) and (max-width: $break-medium - 1) { @content; }
+		@media only screen and (min-width: $break-small) and (max-width: $break-medium - 1) { @content; }
 	}
 	@else if $media == m {
-		@media only screen and (min-width: $break-medium + 1) and (max-width: $break-large - 1) { @content; }
+		@media only screen and (min-width: $break-medium) and (max-width: $break-large - 1) { @content; }
 	}
 	@else if $media == l {
 		@media only screen and (min-width: $break-large) { @content; }
@@ -49,8 +49,10 @@ $break-large: 1200px;
 }
 
 .device {
+	@include respond-to(xs) { &:nth-child(2n+1) { clear: both; } }
 	@include respond-to(sm) { &:nth-child(3n+1) { clear: both; } }
 	@include respond-to(m) { &:nth-child(4n+1) { clear: both; } }
+	@include respond-to(l) { &:nth-child(4n+1) { clear: both; } }
 
 	.panel-heading {
 		.attrs {
@@ -124,8 +126,8 @@ $break-large: 1200px;
 
 	@include transition(max-height 0.4s);
 
-	&:hover {
-		max-height: 9999px;
+	&.show {
+		max-height: 999px;
 	}
 
 	li.title {

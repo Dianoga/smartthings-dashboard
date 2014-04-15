@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>SmartThings Dashboard</title>
 	<link rel='stylesheet' href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css'/>
+	<link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.4/css/jquery.ui.theme.min.css'/>
 	<link rel='stylesheet' href='css/font.css'/>
 	<link rel='stylesheet' href='css/style.css'/>
 </head>
@@ -13,8 +14,8 @@
 	<div class='container' ng-controller="DashCtrl">
 		<h1>SmartThings Dashboard</h1>
 
-		<div class='row'>
-			<div class='device col-md-3 col-sm-4' ng-repeat="d in devices">
+		<div class='row devices'>
+			<div class='device col-md-3 col-sm-4 col-xs-6' ng-repeat="d in devices">
 				<div class='panel panel-default'>
 					<div class='panel-heading'>
 						<div class='attrs'>
@@ -91,13 +92,16 @@
 		</div>
 	</div>
 
+
 	<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.10/angular.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/chroma-js/0.5.2/chroma.min.js"></script>
 	<script src='//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js'></script>
 
 	<script src="https://cdn.goinstant.net/v1/platform.min.js"></script>
 	<script src="https://cdn.goinstant.net/integrations/goangular/latest/goangular.min.js"></script>
-	<script src='js/app.js'></script>
+	<script src='js/angular.js'></script>
+	<script src='js/misc.js'></script>
 </body>
 </html>

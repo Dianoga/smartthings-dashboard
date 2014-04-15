@@ -1,9 +1,19 @@
-@media only screen and (min-width: 769px) and (max-width: 991px) {
+@media only screen and (max-width: 767px) {
+  .device:nth-child(2n+1) {
+    clear: both;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
   .device:nth-child(3n+1) {
     clear: both;
   }
 }
-@media only screen and (min-width: 993px) and (max-width: 1199px) {
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .device:nth-child(4n+1) {
+    clear: both;
+  }
+}
+@media only screen and (min-width: 1200px) {
   .device:nth-child(4n+1) {
     clear: both;
   }
@@ -187,8 +197,8 @@
   -o-transition: max-height 0.4s;
   transition: max-height 0.4s;
 }
-.debug:hover {
-  max-height: 9999px;
+.debug.show {
+  max-height: 999px;
 }
 .debug li.title {
   font-size: 0.9em;
