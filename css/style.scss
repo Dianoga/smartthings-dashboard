@@ -1,7 +1,7 @@
 @import "compass/css3/transition";
 
 @mixin circleProp($iconLabel: false) {
-	@include transition(all 0.3s);
+	@include transition(all 0.5s);
 
 	position: relative;
 	display: inline-block;
@@ -91,6 +91,11 @@ $break-large: 1200px;
 
 .contact {
 	@include circleProp();
+
+	background-color: green;
+	color: white;
+
+	&.open { background-color: orangered; }
 }
 
 .switch {

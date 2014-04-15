@@ -45,9 +45,9 @@
 							</div>
 						</div>
 						<div class='col-sm-6 property' ng-if='d.capabilities.indexOf("Contact Sensor") != -1' ng-class="{ 'col-sm-offset-3': d.capabilities.length == 1 }">
-							<div class='contact'>
-								<span class='open icon-open' ng-if='d.contact == "open"'></span>
-								<span class='closed icon-close' ng-if='d.contact == "closed"'></span>
+							<div class='contact {{d.contact}}'>
+								<span class='icon-open' ng-if='d.contact == "open"'></span>
+								<span class='icon-close' ng-if='d.contact == "closed"'></span>
 							</div>
 						</div>
 						<div class='col-sm-6 property' ng-if='d.capabilities.indexOf("Switch") != -1' ng-class="{ 'col-sm-offset-3': d.capabilities.length == 1 }">
