@@ -1,6 +1,6 @@
 @import "compass/css3/transition";
 
-@mixin circleProp {
+@mixin circleProp($iconLabel: false) {
 	@include transition(all 0.3s);
 
 	position: relative;
@@ -16,7 +16,17 @@
 	line-height: 0;
 
 	[class^="icon-"]:before,
-	[class*=" icon-"]:before { line-height: 0; }
+	[class*=" icon-"]:before {
+		line-height: 0;
+
+		@if $iconLabel {
+			position: relative;
+			top: 2em;
+			display:block;
+			text-align: center;
+			font-size: 0.5em
+		}
+	}
 }
 
 $break-small: 768px;
@@ -54,8 +64,12 @@ $break-large: 1200px;
 		}
 	}
 
-	.property:nth-child(2n+1) {
-		clear: both;
+	.property {
+		margin-bottom: 0.5em;
+
+		&:nth-child(2n+1) {
+			clear: both;
+		}
 	}
 }
 
@@ -96,6 +110,12 @@ $break-large: 1200px;
 
 .presence {
 	@include circleProp();
+}
+
+.humidity {
+	@include circleProp(true);
+
+	color: blue;
 }
 
 .debug {

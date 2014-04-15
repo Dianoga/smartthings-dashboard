@@ -24,20 +24,18 @@
 						<h2 class='panel-title'>{{d.name}}</h2>
 					</div>
 					<div class='panel-body'>
-						<div class='thermostat' ng-if='d.capabilities.indexOf("Thermostat") != -1'>
-							<div class='col-sm-6 property'>
-								<div class='temperature' style='background-color: {{d.temperatureBgColor}}; color: {{d.temperatureTextColor}};'>
-									{{d.temperature}}°
-								</div>
+						<div class='thermostat col-sm-6 property' ng-if='d.capabilities.indexOf("Thermostat") != -1'>
+							<div class='temperature' style='background-color: {{d.temperatureBgColor}}; color: {{d.temperatureTextColor}};'>
+								{{d.temperature}}°
 							</div>
-							<div class='col-sm-6 property'>
-								<div class='target' ng-if="d.thermostatMode != 'off'">
-									<span class='heat icon-fire' ng-if="d.thermostatMode == 'heat' || d.thermostatMode == 'emergency heat'"> {{d.heatingSetpoint}}°</span>
-									<span class='cool icon-snow' ng-if="d.thermostatMode == 'cool'"> {{d.coolingSetpoint}}°</span>
-								</div>
-								<div class='fan icon-air' ng-if="d.thermostatFanMode != 'off'">
-									{{d.thermostatFanMode}}
-								</div>
+						</div>
+						<div class='thermostat col-sm-6 property' ng-if='d.capabilities.indexOf("Thermostat") != -1'>
+							<div class='target' ng-if="d.thermostatMode != 'off'">
+								<span class='heat icon-fire' ng-if="d.thermostatMode == 'heat' || d.thermostatMode == 'emergency heat'"> {{d.heatingSetpoint}}°</span>
+								<span class='cool icon-snow' ng-if="d.thermostatMode == 'cool'"> {{d.coolingSetpoint}}°</span>
+							</div>
+							<div class='fan icon-air' ng-if="d.thermostatFanMode != 'off'">
+								{{d.thermostatFanMode}}
 							</div>
 						</div>
 						<div class='col-sm-6 property' ng-if='d.capabilities.indexOf("Temperature Measurement") != -1' ng-class="{ 'col-sm-offset-3': d.capabilities.length == 1 }">
@@ -64,6 +62,11 @@
 						<div class='col-sm-6 property' ng-if='d.presence' ng-class="{ 'col-sm-offset-3': d.capabilities.length == 1 }">
 							<div class='presence' ng-class="{'away': d.presence != 'present'}">
 								<span ng-class="{'icon-present': d.presence == 'present', 'icon-away': d.presence != 'present'}"></span>
+							</div>
+						</div>
+						<div class='col-sm-6 property' ng-if='d.humidity' ng-class="{ 'col-sm-offset-3': d.capabilities.length == 1 }">
+							<div class='humidity'>
+								<span class="icon-water"> {{d.humidity}}%</span>
 							</div>
 						</div>
 					</div>

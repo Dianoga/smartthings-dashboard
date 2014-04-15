@@ -18,6 +18,9 @@
 .device .panel-heading .attrs span {
   display: block;
 }
+.device .property {
+  margin-bottom: 0.5em;
+}
 .device .property:nth-child(2n+1) {
   clear: both;
 }
@@ -147,6 +150,33 @@
 .presence [class^="icon-"]:before,
 .presence [class*=" icon-"]:before {
   line-height: 0;
+}
+
+.humidity {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 0;
+  padding: 50% 0;
+  border-radius: 50%;
+  border: 1px solid;
+  font-size: 2em;
+  text-align: center;
+  line-height: 0;
+  color: blue;
+}
+.humidity [class^="icon-"]:before,
+.humidity [class*=" icon-"]:before {
+  line-height: 0;
+  position: relative;
+  top: 2em;
+  display: block;
+  text-align: center;
+  font-size: 0.5em;
 }
 
 .debug {
