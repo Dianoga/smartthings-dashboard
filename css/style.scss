@@ -117,6 +117,14 @@ $break-large: 1200px;
 
 .presence {
 	@include circleProp();
+
+	background-color: green;
+	color: white;
+
+	&.away {
+		color: #ccc;
+		background: transparent;
+	}
 }
 
 .humidity {

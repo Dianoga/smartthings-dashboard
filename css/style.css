@@ -36,9 +36,9 @@
 }
 
 .temperature {
+  -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -o-transition: all 0.5s;
-  -webkit-transition: all 0.5s;
   transition: all 0.5s;
   position: relative;
   display: inline-block;
@@ -72,9 +72,9 @@
 }
 
 .contact {
+  -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -o-transition: all 0.5s;
-  -webkit-transition: all 0.5s;
   transition: all 0.5s;
   position: relative;
   display: inline-block;
@@ -98,9 +98,9 @@
 }
 
 .switch {
+  -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -o-transition: all 0.5s;
-  -webkit-transition: all 0.5s;
   transition: all 0.5s;
   position: relative;
   display: inline-block;
@@ -123,9 +123,9 @@
 }
 
 .motion {
+  -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -o-transition: all 0.5s;
-  -webkit-transition: all 0.5s;
   transition: all 0.5s;
   position: relative;
   display: inline-block;
@@ -147,9 +147,9 @@
 }
 
 .presence {
+  -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -o-transition: all 0.5s;
-  -webkit-transition: all 0.5s;
   transition: all 0.5s;
   position: relative;
   display: inline-block;
@@ -161,16 +161,22 @@
   font-size: 2em;
   text-align: center;
   line-height: 0;
+  background-color: green;
+  color: white;
 }
 .presence [class^="icon-"]:before,
 .presence [class*=" icon-"]:before {
   line-height: 0;
 }
+.presence.away {
+  color: #ccc;
+  background: transparent;
+}
 
 .humidity {
+  -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -o-transition: all 0.5s;
-  -webkit-transition: all 0.5s;
   transition: all 0.5s;
   position: relative;
   display: inline-block;
@@ -197,9 +203,9 @@
 .debug {
   max-height: 1.5em;
   overflow: hidden;
+  -webkit-transition: max-height 0.4s;
   -moz-transition: max-height 0.4s;
   -o-transition: max-height 0.4s;
-  -webkit-transition: max-height 0.4s;
   transition: max-height 0.4s;
 }
 .debug.show {
